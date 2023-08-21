@@ -2,7 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 // Calling Parent in views here
-import Parent from './views/parent.vue'
+// import Parent from './views/parent.vue'
 </script>
 
 
@@ -10,7 +10,7 @@ import Parent from './views/parent.vue'
 
 
 <!-- We are using Parent Component here -->
-  <Parent/>
+  <!-- <Parent/> -->
 
   <RouterView />
 </template>

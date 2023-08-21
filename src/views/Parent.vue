@@ -1,8 +1,8 @@
 <!-- We will call this in App.vue -->
 
 <template>
-    <h2>I am parent </h2>
-    <ChildComponent/>
+    <!-- I am getting the value of prop here that I hace defined in ChildComponent -->
+    <ChildComponent :childName="parentName" :clickFunction="alertFunction"/>
 </template>
 
 <script>
@@ -15,6 +15,21 @@ export default {
     name: 'Parent',
     components: {
         ChildComponent
+    },
+    // Data is access by data()
+    data()
+    {
+        return{
+            parentName: "Hi there, Asfia"
+        }   
+    },
+    methods:
+    {
+        // Defining functions here
+        alertFunction()
+        {
+            alert('I am function');
+        }
     }
 }
 </script>

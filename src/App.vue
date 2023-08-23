@@ -11,6 +11,10 @@ const titleClass = ref("title");
 const buttonTitle = ref('Click me!');
 const textColor = ref('violet');
 const isActive = ref(false);
+const count = ref(100)
+function decrement() {
+  count.value--
+}
 </script>
 
 <template>
@@ -26,7 +30,13 @@ const isActive = ref(false);
   <!-- 4. Conditional Attribute Binding -->
   <button :class="{ 'active': isActive }">Toggle</button> <br>
   <!-- 5. Binding Multiple Attributes -->
-  <button :class="{ 'active': isActive }" :style="{ backgroundColor: isActive ? 'blue' : 'pink' }">Toggle</button> <br>
+  <button :class="{ 'active': isActive }" :style="{ backgroundColor: isActive ? 'blue' : 'pink' }">Toggle</button> <br><br><br><br>
+
+
+
+  <!-- Event Listeners -->
+  <p>Click on the button for decreasing the value</p> <br><br><br>
+  <button @click="decrement">{{ count }}</button>
 </template>
 
 <style>

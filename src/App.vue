@@ -15,6 +15,16 @@ const count = ref(100)
 function decrement() {
   count.value--
 }
+
+const name = ref('Asfia')
+
+function greet(event) {
+  alert(`Hello ${name.value}!`)
+  // `event` is the native DOM event
+  if (event) {
+    alert(event.target.tagName)
+  }
+}
 </script>
 
 <template>
@@ -35,8 +45,20 @@ function decrement() {
 
 
   <!-- Event Listeners -->
+  <!-- 1. Inline Handler   -->
+  <h3>Inline Event Handler</h3> <br>
   <p>Click on the button for decreasing the value</p> <br><br><br>
-  <button @click="decrement">{{ count }}</button>
+  <button @click="decrement">{{ count }}</button> <br>
+
+  <!-- 2. Method Handler -->
+  <h3>Method Handler</h3> <br>
+  <button @click="greet">Greet Me</button> <br>
+
+  <!-- Stop Event Modifier -->
+  <a @click="doThis"></a> <br>
+  <!-- Stop Reload -->
+  <form @submit.prevent="onSubmit"></form>
+  
 </template>
 
 <style>

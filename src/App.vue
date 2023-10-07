@@ -18,6 +18,8 @@ function decrement() {
 
 const name = ref('Asfia')
 
+const checkedNames = ref([])
+
 function greet(event) {
   alert(`Hello ${name.value}!`)
   // `event` is the native DOM event
@@ -57,7 +59,67 @@ function greet(event) {
   <!-- Stop Event Modifier -->
   <a @click="doThis"></a> <br>
   <!-- Stop Reload -->
-  <form @submit.prevent="onSubmit"></form>
+  <form @submit.prevent="onSubmit"></form> <br>
+
+  <!-- Form Bindings -->
+  <p>Message is: {{ message }}</p>
+  <input v-model="message" placeholder="edit me" /> <br> <br> <br>
+
+  <!-- Multiline -->
+  <span>Multiline message is:</span>
+  <p style="white-space: pre-line;">{{ message }}</p>
+  <textarea v-model="message" placeholder="add multiple lines"></textarea> 
+
+  <!-- Chceckbox -->
+  <input type="checkbox" id="checkbox" v-model="checked" />
+  <label for="checkbox">True: {{ checked }}</label>
+
+  <br>
+
+  <!-- Multiple Checkboxes -->
+  <div>Checked names: {{ checkedNames }}</div>
+
+  <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+  <label for="jack">Jack</label>
+
+  <input type="checkbox" id="john" value="John" v-model="checkedNames">
+  <label for="john">John</label>
+
+  <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+  <label for="mike">Mike</label>
+
+  <br>
+
+  <!-- Radio Box -->
+  <div>Picked: {{ picked }}</div>
+
+  <input type="radio" id="one" value="One" v-model="picked" />
+  <label for="one">One</label>
+
+  <input type="radio" id="two" value="Two" v-model="picked" />
+  <label for="two">Two</label>
+
+  <!-- Single Select -->
+
+  <div>Selected: {{ selected }}</div>
+
+  <select v-model="selected">
+    <option disabled value="">Please select one</option>
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+  </select>
+
+  <!-- Multiple Select -->
+  <div>Selected: {{ selected }}</div>
+
+  <select v-model="selected" multiple>
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+  </select>
+
+
   
 </template>
 

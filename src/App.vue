@@ -119,6 +119,23 @@ function greet(event) {
     <option>C</option>
   </select>
 
+  <!-- Conditional Rendering -->
+  <!-- If -->
+  <h1 v-if="awesome">Hey There</h1>
+
+  <!-- Else -->
+  <br> <br>
+  <button @click="awesome = !awesome">Toggle</button>
+  <h1 v-if="!awesome">I am learning vue</h1>
+  <h1 v-else>No, I am not learning it</h1>
+
+  <!-- Else-if -->
+  <br> <br>
+  <div v-if="type === 'A'">A</div>
+  <div v-else-if="type === 'B'">B</div>
+  <div v-else-if="type === 'C'">C</div>
+  <div v-else>Sorry, None!</div>
+
 
   
 </template>
